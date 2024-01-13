@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Question seventeen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+    <script>
+        function findHighestValue(arr) {
+            if (arr.length === 0) {
+                return undefined;
+            }
+                return Math.max(...arr);
+        }
+
+        // Example usage:
+        const testArray = [12, 34, 56, 1];
+        const highestValue = findHighestValue(testArray);
+
+    document.getElementById("demo1").textContent=`Highest Value: ${highestValue}`;
+
+        function findLowestValue(arr) {
+            if (arr.length === 0) {
+                return undefined;
+            }
+                return Math.min(...arr);
+        }
+
+        const lovestValue = findLowestValue(testArray);
+        document.getElementById("demo2").textContent=`Lovest Value: ${lovestValue}`;
+    </script>
+</body>
+
+</html>

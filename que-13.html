@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Question thirteen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+</head>
+
+<body>
+    <div>
+        <form action="">
+            <label for="multi"> number-1</label>
+            <input type="number" id="numberfirst">
+            <label for="multi"> number-2</label>
+            <input type="number" id="numbersecond">
+            <button type="button" onclick="multi()">multiply</button>
+            <button type="button" onclick="division()">divide</button>
+
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+
+
+        function multi() {
+            let num1 = document.getElementById("numberfirst").value;
+            let num2 = document.getElementById("numbersecond").value;
+
+            
+
+            res = parseFloat(num1) * parseFloat(num2);
+            //    console.log("res");
+            document.getElementById("result").textContent  = `Result: ${res}`;
+        }
+
+        function division() {
+            let num1 = document.getElementById("numberfirst").value;
+            let num2 = document.getElementById("numbersecond").value;
+
+            
+
+            res = parseFloat(num1) / parseFloat(num2);
+            //    console.log("res");
+            document.getElementById("result").textContent  = `Result: ${res}`;
+        }
+    </script>
+</body>
+
+</html>

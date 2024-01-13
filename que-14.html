@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Question fourteen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <script>
+        function reverseNumber(inputNumber) {
+
+  const reversedString = String(inputNumber).split('').reverse().join('');
+  
+  
+  const reversedNumber = parseInt(reversedString, 10);
+
+  return reversedNumber;
+}
+
+// Example usage:
+const inputNumber = 153040;
+const reversedResult = reverseNumber(inputNumber);
+console.log("Original number:", inputNumber);
+console.log("Reversed number:", reversedResult);
+    </script>
+</body>
+</html>

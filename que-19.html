@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Question ninteen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: lightgray;
+        }
+
+        .container {
+            width: 90%;
+            height: auto;
+        }
+
+        input {
+            margin: 10px;
+            width: 400%;
+            height: 40px;
+            font-size: 25px;
+        }
+
+        .td-1 {
+            width: 23%;
+            height: auto;
+        }
+
+        #btn {
+            width: 98% !important;
+            height: 75px !important;
+            background: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td><input id="inpu-0" name="inpu-0" type="text" placeholder="0" style="text-align: right;"></td>
+            </tr>
+            <tr>
+                <td class="td-1"><button type="button" id="btn" value="%"
+                        onclick="return module(this.value)">&#37</button></td>
+                <td class="td-1"><button type="button" id="btn" onclick="return clr(this.value)">CE</button></td>
+                <td class="td-1"><button type="button" id="btn" onclick="return del(this.value)">DE</button></td>
+                <td class="td-1"><button type="button" id="btn">&times;</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="btn">1/x</button></td>
+                <td><button type="button" id="btn" onclick="return sq_2(this.value)">x<sup>2</sup></button></td>
+                <td><button type="button" id="btn" onclick="return sqrt_1(this.value)">2√x</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="/">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="7">7</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="8">8</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="9">9</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="*">X</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="4">4</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="5">5</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="6">6</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="-">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="1">1</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="2">2</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="3">3</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="+">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="btn">+/-</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value="0">0</button></td>
+                <td><button type="button" id="btn" onclick="return dispaly(this.value)" value=".">.</button></td>
+                <td><button type="button" id="btn" onclick="return final_result(this.value)">=</button></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <script>
+        // Function for dispaly number
+        function dispaly(val) {
+            document.getElementById("inpu-0").value += val;
+        }
+
+        // funcion for finel result 
+        function final_result() {
+            var x = document.getElementById("inpu-0").value;
+            var y = eval(x);
+            document.getElementById("inpu-0").value = y;
+        }
+
+        // function for clear all 
+
+        function clr() {
+            document.getElementById("inpu-0").value = "";
+        }
+
+        //  function for back space
+        function del() {
+            var x = document.getElementById("inpu-0").value;
+            var y = x.slice(0, -1);
+            document.getElementById("inpu-0").value = y;
+        }
+
+        // function for sq root
+
+        function sqrt_1() {
+            var x = document.getElementById("inpu-0").value;
+            var y = Math.sqrt(x);
+            document.getElementById("inpu-0").value = y;
+        }
+
+        // fuction for squere
+
+        function sq_2() {
+            var x = document.getElementById("inpu-0").value;
+            var y = Math.pow(x, 2);
+            document.getElementById("inpu-0").value = y;
+        }
+
+        // function for modules element
+
+        function modules(val, perc) {
+            document.getElementById("inpu-0").value = (val * perc / 100);
+            //   var y= x(val * perc/100);
+            //   document.getElementById("inpu-0").value = y;
+        }
+    </script>
+</body>
+
+</html>
